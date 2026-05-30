@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixabay Clone | Task 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">pixabay</div>
+    <div class="nav-right">
+      <a href="#">Explore</a>
+      <a href="#">Log in</a>
+      <a href="#">Join</a>
+      <button class="upload-btn">↑ Upload</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Stunning royalty-free images & royalty-free stock</h1>
+      <p>Over 4.3 million+ high quality stock images, videos and music shared by our talented community.</p>
+      
+      <div class="search-container" id="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input" placeholder="Search for all images on Pixabay">
+        <select class="search-select">
+          <option>All images</option>
+          <option>Photos</option>
+          <option>Vectors</option>
+        </select>
+      </div>
+      
+      <div class="trending-tags">
+        <span>Trending:</span>
+        <a href="#">background</a>,
+        <a href="#">wallpaper</a>,
+        <a href="#">nature</a>,
+        <a href="#">love</a>,
+        <a href="#">flowers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION / MASONRY GRID -->
+  <main class="gallery-container">
+    <div class="gallery-nav">
+      <div class="nav-tabs">
+        <button class="active">🏠 Home</button>
+        <button>📷 Photos</button>
+        <button>🎨 Illustrations</button>
+        <button>✒️ Vectors</button>
+      </div>
+      <div class="filter-btn">
+        <button>⚙️ Filters</button>
+      </div>
+    </div>
+
+    <div class="masonry-grid">
+      <!-- Image 1 -->
+      <div class="grid-item">
+        <div class="img-placeholder" style="height: 300px; background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);">
+          <span>Nature 1</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+      
+      <!-- Image 2 -->
+      <div class="grid-item">
+        <div class="img-placeholder" style="height: 200px; background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Tech 1</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+      
+      <!-- Image 3 -->
+      <div class="grid-item">
+        <div class="img-placeholder" style="height: 400px; background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);">
+          <span>Portrait</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+      
+      <!-- Image 4 -->
+      <div class="grid-item">
+        <div class="img-placeholder" style="height: 250px; background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+          <span>Architecture</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+      
+      <!-- Image 5 -->
+      <div class="grid-item">
+        <div class="img-placeholder" style="height: 350px; background: linear-gradient(to right, #434343 0%, black 100%);">
+          <span style="color:white">Space</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+
+       <!-- Image 6 -->
+       <div class="grid-item">
+        <div class="img-placeholder" style="height: 220px; background: linear-gradient(to right, #f83600 0%, #f9d423 100%);">
+          <span style="color:white">Abstract</span>
+        </div>
+        <div class="overlay-actions">
+          <button class="like-btn">❤️</button>
+          <button class="save-btn">🔖</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

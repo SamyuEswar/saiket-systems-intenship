@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duolingo Clone | Task 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="logo">
+      <h2 class="duo-green">duolingo</h2>
+    </div>
+    <nav class="nav-links">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">LEARN</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🏆</span>
+        <span class="nav-text">LEADERBOARD</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-text">QUESTS</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🏪</span>
+        <span class="nav-text">SHOP</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👤</span>
+        <span class="nav-text">PROFILE</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">⋯</span>
+        <span class="nav-text">MORE</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="main-content">
+    
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="top-item course-flag">
+        🇪🇸
+      </div>
+      <div class="top-item streak">
+        <span class="icon">🔥</span>
+        <span class="value">14</span>
+      </div>
+      <div class="top-item gems">
+        <span class="icon">💎</span>
+        <span class="value">1250</span>
+      </div>
+      <div class="top-item hearts">
+        <span class="icon">❤️</span>
+        <span class="value">5</span>
+      </div>
+    </header>
+
+    <!-- LEARNING PATH -->
+    <div class="learning-path">
+      
+      <!-- Unit Header -->
+      <section class="unit-header green-unit">
+        <div class="unit-info">
+          <h3>Unit 1</h3>
+          <p>Order food and drink, greet people</p>
+        </div>
+        <button class="btn btn-secondary guidebook-btn">
+          📖 GUIDEBOOK
+        </button>
+      </section>
+
+      <!-- Path Nodes -->
+      <div class="path-container">
+        <!-- Node 1 (Completed) -->
+        <div class="path-row center">
+          <button class="node-btn completed" data-title="Order food" data-desc="Lesson 1 of 4">
+            <span class="node-icon">⭐</span>
+          </button>
+        </div>
+        
+        <!-- Node 2 (Completed) -->
+        <div class="path-row right">
+          <button class="node-btn completed" data-title="Order food" data-desc="Lesson 2 of 4">
+            <span class="node-icon">⭐</span>
+          </button>
+        </div>
+        
+        <!-- Node 3 (Active) -->
+        <div class="path-row right">
+          <button class="node-btn active" data-title="Greet people" data-desc="Lesson 1 of 4">
+            <div class="crown-tooltip">START</div>
+            <span class="node-icon">⭐</span>
+          </button>
+        </div>
+        
+        <!-- Node 4 (Locked) -->
+        <div class="path-row center">
+          <button class="node-btn locked" data-title="Locked" data-desc="Complete previous lessons to unlock">
+            <span class="node-icon">🔒</span>
+          </button>
+        </div>
+        
+        <!-- Node 5 (Treasure) -->
+        <div class="path-row left">
+          <button class="node-btn treasure locked" data-title="Reward" data-desc="Unlock a chest!">
+            <span class="node-icon">🎁</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- RIGHT SIDEBAR (Leagues/Progress) -->
+  <aside class="right-sidebar">
+    <div class="panel league-panel">
+      <h4>Unlock Leaderboards!</h4>
+      <p>Complete 10 more lessons to start competing.</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 20%;"></div>
+      </div>
+    </div>
+    <div class="panel ad-panel">
+      <h4>Duolingo Super</h4>
+      <p>No ads, personalized practice, and unlimited hearts!</p>
+      <button class="btn btn-primary try-super-btn">TRY 2 WEEKS FREE</button>
+    </div>
+  </aside>
+
+  <!-- START LESSON MODAL -->
+  <div class="modal-overlay" id="lesson-modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Greet people</h2>
+      <p id="modal-desc">Lesson 1 of 4</p>
+      <button class="btn btn-primary full-width" id="start-lesson-btn">START +10 XP</button>
+      <button class="btn btn-secondary full-width" id="close-modal-btn">CANCEL</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

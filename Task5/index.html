@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Task 5 — A beautiful pastel To-Do List App with interactive filtering and soft delete." />
+    <title>TaskFlow | To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app-wrapper">
+
+      <!-- ===== HEADER ===== -->
+      <header class="app-header">
+        <h1 class="app-logo">Task<span>Flow</span></h1>
+        <p class="app-caption">Organise your day, the beautiful way. ✨</p>
+      </header>
+
+      <!-- ===== STATS ROW (CLICKABLE FILTERS) ===== -->
+      <section class="stats-row" aria-label="Task statistics and filters">
+        <div class="stat-chip total selected" data-filter="all" role="button" tabindex="0" aria-pressed="true">
+          <div class="stat-value" id="stat-total">0</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat-chip active" data-filter="active" role="button" tabindex="0" aria-pressed="false">
+          <div class="stat-value" id="stat-active">0</div>
+          <div class="stat-label">Active</div>
+        </div>
+        <div class="stat-chip done" data-filter="completed" role="button" tabindex="0" aria-pressed="false">
+          <div class="stat-value" id="stat-done">0</div>
+          <div class="stat-label">Done</div>
+        </div>
+        <div class="stat-chip deleted" data-filter="deleted" role="button" tabindex="0" aria-pressed="false">
+          <div class="stat-value" id="stat-deleted">0</div>
+          <div class="stat-label">Deleted</div>
+        </div>
+      </section>
+
+      <!-- ===== INPUT CARD ===== -->
+      <section class="input-card" aria-label="Add new task">
+
+        <!-- Text input + Add button -->
+        <div class="input-row">
+          <input
+            type="text"
+            id="task-input"
+            class="task-input"
+            placeholder="What needs to be done? Press Enter or click Add..."
+            maxlength="200"
+            aria-label="New task description"
+            autocomplete="off"
+          />
+          <button id="add-btn" class="btn-add" aria-label="Add task">
+            + Add
+          </button>
+        </div>
+
+        <!-- Priority + Category selectors -->
+        <div class="meta-row">
+          <select id="priority-select" class="priority-select" aria-label="Task priority">
+            <option value="medium">🟡 Medium Priority</option>
+            <option value="high">🔴 High Priority</option>
+            <option value="low">🟢 Low Priority</option>
+          </select>
+
+          <select id="category-select" class="category-select" aria-label="Task category">
+            <option value="General">📁 General</option>
+            <option value="Work">💼 Work</option>
+            <option value="Study">📚 Study</option>
+            <option value="Personal">🏠 Personal</option>
+            <option value="Health">💪 Health</option>
+            <option value="Shopping">🛒 Shopping</option>
+          </select>
+        </div>
+
+      </section>
+
+      <!-- ===== FILTER + SEARCH BAR ===== -->
+      <div class="filter-bar">
+        <!-- Search -->
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search tasks..."
+            aria-label="Search tasks"
+          />
+        </div>
+
+        <!-- Sort -->
+        <select id="sort-select" class="sort-select" aria-label="Sort tasks">
+          <option value="newest">⬇ Newest</option>
+          <option value="oldest">⬆ Oldest</option>
+          <option value="priority">🔴 Priority</option>
+          <option value="alpha">🔤 A–Z</option>
+        </select>
+      </div>
+
+      <!-- ===== TASK LIST ===== -->
+      <main>
+        <ul
+          id="task-list"
+          class="task-list"
+          role="list"
+          aria-label="Task list"
+          aria-live="polite"
+        >
+          <!-- Tasks are injected here by script.js -->
+        </ul>
+      </main>
+
+      <!-- ===== CLEAR COMPLETED / DELETED ===== -->
+      <button
+        id="clear-done-btn"
+        class="clear-btn"
+        aria-label="Clear tasks"
+      >
+        🗑️ Clear Completed Tasks
+      </button>
+
+      <!-- ===== FOOTER ===== -->
+      <footer class="app-footer">
+        <p>© 2026 <a href="#">Saiket Systems</a> · Tasks saved locally</p>
+      </footer>
+
+    </div><!-- /app-wrapper -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

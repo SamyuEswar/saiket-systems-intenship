@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore our featured product collection — smartwatches, headphones, cameras, keyboards and more." />
+    <title>Featured Products | Saiket Systems</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- ===== PAGE HEADING ===== -->
+    <header class="page-heading">
+      <h1>Featured Products</h1>
+    </header>
+
+    <!-- ===== PRODUCT CARDS GRID ===== -->
+    <main>
+      <div class="cards-grid">
+
+        <!-- ── CARD 1 ── -->
+        <article class="product-card" id="card-aurora-watch">
+
+          <!-- Badges -->
+          <div class="badge-row">
+            <span class="badge badge--new">New</span>
+            <span class="badge badge--sale">−20%</span>
+          </div>
+
+          <!-- Wishlist -->
+          <button
+            class="wishlist-btn"
+            id="wish-1"
+            aria-label="Add Aurora Watch to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <!-- Image -->
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"
+              alt="Aurora Pro smartwatch with glowing face on dark surface"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Body -->
+          <div class="card-body">
+            <p class="card-category">Wearables</p>
+            <h2 class="card-name">Aurora Pro Smartwatch</h2>
+            <p class="card-desc">
+              AMOLED display, 14-day battery life, health monitoring &amp; GPS — crafted for explorers.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.8 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-count">(1,284)</span>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$199</span>
+              <span class="price-original">$249</span>
+              <span class="price-save">Save $50</span>
+            </div>
+            <button
+              id="cart-btn-1"
+              class="btn-cart"
+              aria-label="Add Aurora Pro Smartwatch to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- ── CARD 2 ── -->
+        <article class="product-card" id="card-nova-headphones">
+
+          <div class="badge-row">
+            <span class="badge badge--hot">Hot</span>
+          </div>
+
+          <button
+            class="wishlist-btn"
+            id="wish-2"
+            aria-label="Add Nova Headphones to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80"
+              alt="Nova X1 wireless headphones floating on gradient background"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-body">
+            <p class="card-category">Audio</p>
+            <h2 class="card-name">Nova X1 Wireless Headphones</h2>
+            <p class="card-desc">
+              40hr battery, active noise cancellation, premium drivers for studio-grade sound quality.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.6 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span class="empty">★</span>
+              </div>
+              <span class="rating-count">(872)</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$149</span>
+            </div>
+            <button
+              id="cart-btn-2"
+              class="btn-cart"
+              aria-label="Add Nova X1 Headphones to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- ── CARD 3 ── -->
+        <article class="product-card" id="card-lumix-camera">
+
+          <div class="badge-row">
+            <span class="badge badge--limited">Limited</span>
+          </div>
+
+          <button
+            class="wishlist-btn"
+            id="wish-3"
+            aria-label="Add Lumix Camera to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80"
+              alt="Lumix S7 mirrorless camera with 35mm lens on wooden surface"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-body">
+            <p class="card-category">Photography</p>
+            <h2 class="card-name">Lumix S7 Mirrorless Camera</h2>
+            <p class="card-desc">
+              48MP full-frame sensor, 8K video, dual-slot recording — for the serious storyteller.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.9 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-count">(394)</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$1,299</span>
+              <span class="price-original">$1,499</span>
+              <span class="price-save">Save $200</span>
+            </div>
+            <button
+              id="cart-btn-3"
+              class="btn-cart"
+              aria-label="Add Lumix S7 Camera to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- ── CARD 4 ── -->
+        <article class="product-card" id="card-mech-keyboard">
+
+          <div class="badge-row">
+            <span class="badge badge--hot">Best Seller</span>
+          </div>
+
+          <button
+            class="wishlist-btn"
+            id="wish-4"
+            aria-label="Add Mechanical Keyboard to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80"
+              alt="Nexus 75% Mechanical Keyboard with RGB backlight"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-body">
+            <p class="card-category">Peripherals</p>
+            <h2 class="card-name">Nexus 75% Mechanical Keyboard</h2>
+            <p class="card-desc">
+              Hot-swappable switches, RGB backlighting, and a premium aluminum frame for ultimate typing.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.7 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-count">(2,104)</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$129</span>
+            </div>
+            <button
+              id="cart-btn-4"
+              class="btn-cart"
+              aria-label="Add Nexus Keyboard to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- ── CARD 5 ── -->
+        <article class="product-card" id="card-wireless-mouse">
+
+          <div class="badge-row">
+            <span class="badge badge--sale">−15%</span>
+          </div>
+
+          <button
+            class="wishlist-btn"
+            id="wish-5"
+            aria-label="Add Wireless Mouse to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&q=80"
+              alt="ErgoPro wireless mouse on a desk"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-body">
+            <p class="card-category">Peripherals</p>
+            <h2 class="card-name">ErgoPro Master Mouse</h2>
+            <p class="card-desc">
+              Ultra-fast scrolling, ergonomic design, and cross-computer control for seamless workflow.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.8 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-count">(3,421)</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$85</span>
+              <span class="price-original">$100</span>
+              <span class="price-save">Save $15</span>
+            </div>
+            <button
+              id="cart-btn-5"
+              class="btn-cart"
+              aria-label="Add ErgoPro Mouse to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- ── CARD 6 ── -->
+        <article class="product-card" id="card-ultrawide-monitor">
+
+          <div class="badge-row">
+            <span class="badge badge--new">New</span>
+          </div>
+
+          <button
+            class="wishlist-btn"
+            id="wish-6"
+            aria-label="Add Ultrawide Monitor to wishlist"
+            onclick="toggleWish(this)"
+          >🤍</button>
+
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1547119957-637f8679db1e?w=600&q=80"
+              alt="VisionMax 34 inch ultrawide curved monitor"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-body">
+            <p class="card-category">Displays</p>
+            <h2 class="card-name">VisionMax 34" Ultrawide</h2>
+            <p class="card-desc">
+              Curved WQHD display, 144Hz refresh rate, and 1ms response time for immersive gaming.
+            </p>
+            <div class="star-rating" aria-label="Rating: 4.9 out of 5">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-count">(512)</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price-row">
+              <span class="price-current">$699</span>
+            </div>
+            <button
+              id="cart-btn-6"
+              class="btn-cart"
+              aria-label="Add VisionMax Monitor to cart"
+              onclick="addToCart(this)"
+            >
+              <span class="cart-icon">🛒</span>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+      </div><!-- /cards-grid -->
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <p>© 2026 <a href="#">Saiket Systems</a> · Task 2 — HTML &amp; CSS Product Cards</p>
+    </footer>
+
+    <!-- ===== MICRO INTERACTIONS (minimal JS) ===== -->
+    <script>
+      /* Wishlist toggle */
+      function toggleWish(btn) {
+        const isActive = btn.classList.toggle('active');
+        btn.textContent = isActive ? '❤️' : '🤍';
+        btn.setAttribute('aria-pressed', isActive);
+      }
+
+      /* Add to Cart feedback */
+      function addToCart(btn) {
+        btn.classList.add('added');
+        btn.innerHTML = '<span class="cart-icon">✅</span> Added!';
+        setTimeout(() => {
+          btn.classList.remove('added');
+          btn.innerHTML = '<span class="cart-icon">🛒</span> Add to Cart';
+        }, 2000);
+      }
+    </script>
+
+  </body>
+</html>

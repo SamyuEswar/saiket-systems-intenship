@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A responsive web portal for developers — featuring articles, sidebar, stats and newsletter." />
+    <title>Saiket.Dev — Developer Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- =============================================
+         HEADER
+         ============================================= -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="#" class="logo" aria-label="Saiket Systems home">Saiket<span>.</span>Dev</a>
+
+        <!-- Primary Navigation -->
+        <nav aria-label="Primary navigation">
+          <ul class="primary-nav">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <button class="btn-ghost" id="sign-in-btn">Sign In</button>
+          <button class="btn-primary" id="get-started-btn">Get Started</button>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- =============================================
+         PAGE WRAPPER — Grid layout container
+         ============================================= -->
+    <div class="page-wrapper">
+
+      <!-- =============================================
+           SIDEBAR
+           ============================================= -->
+      <aside class="sidebar" role="complementary" aria-label="Sidebar">
+
+        <!-- Categories -->
+        <div class="sidebar-card">
+          <h3>Categories</h3>
+          <ul class="category-list">
+            <li>
+              <a href="#" class="active">
+                🖥️ Web Development
+                <span class="count">42</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                🎨 UI/UX Design
+                <span class="count">28</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                ⚙️ Backend &amp; APIs
+                <span class="count">19</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                📱 Mobile Dev
+                <span class="count">15</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                🤖 AI &amp; ML
+                <span class="count">11</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                🔒 Cybersecurity
+                <span class="count">8</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-card">
+          <h3>Popular Tags</h3>
+          <div class="tag-cloud">
+            <span class="tag-chip">HTML</span>
+            <span class="tag-chip">CSS</span>
+            <span class="tag-chip">JavaScript</span>
+            <span class="tag-chip">React</span>
+            <span class="tag-chip">Node.js</span>
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">Figma</span>
+            <span class="tag-chip">Next.js</span>
+            <span class="tag-chip">Git</span>
+            <span class="tag-chip">REST API</span>
+            <span class="tag-chip">TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="sidebar-card">
+          <h3>Newsletter</h3>
+          <p style="font-size:.84rem;color:var(--ink-2);margin-bottom:12px;line-height:1.6;">
+            Get the latest web dev tutorials delivered to your inbox weekly.
+          </p>
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input
+              type="email"
+              id="newsletter-email"
+              placeholder="your@email.com"
+              required
+              aria-label="Email address for newsletter"
+            />
+            <button type="submit" id="subscribe-btn">Subscribe →</button>
+          </form>
+        </div>
+
+      </aside>
+
+      <!-- =============================================
+           MAIN CONTENT
+           ============================================= -->
+      <main class="main-content" id="main-content" role="main">
+
+        <!-- Hero Banner -->
+        <section class="hero-banner" aria-labelledby="hero-heading">
+          <span class="label">✨ New Articles Every Week</span>
+          <h1 id="hero-heading">
+            Build Layouts That Work<br />Everywhere
+          </h1>
+          <p>
+            Discover hand-picked articles, tutorials, and resources curated for developers and designers who love building great products.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" id="explore-btn">Explore Articles</button>
+            <button class="btn-ghost"   id="view-source-btn">View Source</button>
+          </div>
+        </section>
+
+        <!-- Stats Row -->
+        <section aria-label="Site statistics">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-value">1.2K</div>
+              <div class="stat-label">Articles Published</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">48K</div>
+              <div class="stat-label">Monthly Readers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">320</div>
+              <div class="stat-label">Open-source Projects</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section aria-labelledby="articles-heading">
+          <h2 class="articles-heading" id="articles-heading">Latest Articles</h2>
+
+          <div class="articles-grid">
+
+            <!-- Article 1 -->
+            <article class="article-card" id="article-css-grid">
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=75"
+                alt="Lines of colourful code on a dark monitor"
+                loading="eager"
+                width="600" height="340"
+              />
+              <div class="article-card-body">
+                <p class="article-tag">CSS</p>
+                <h3>Mastering CSS Grid: From Basics to Complex Layouts</h3>
+                <div class="article-meta-row">
+                  <span>Sam Saiket</span>
+                  <span class="dot"></span>
+                  <span>May 28, 2026</span>
+                  <span class="dot"></span>
+                  <span>8 min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card" id="article-flexbox">
+              <img
+                src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=600&q=75"
+                alt="Developer laptop showing HTML and CSS code"
+                loading="lazy"
+                width="600" height="340"
+              />
+              <div class="article-card-body">
+                <p class="article-tag">HTML</p>
+                <h3>Semantic HTML: Why It Matters More Than You Think</h3>
+                <div class="article-meta-row">
+                  <span>Priya Dev</span>
+                  <span class="dot"></span>
+                  <span>May 25, 2026</span>
+                  <span class="dot"></span>
+                  <span>5 min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card" id="article-responsive">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=75"
+                alt="MacBook showing responsive design wireframes"
+                loading="lazy"
+                width="600" height="340"
+              />
+              <div class="article-card-body">
+                <p class="article-tag">Responsive</p>
+                <h3>Media Queries in 2026: Modern Patterns &amp; Best Practices</h3>
+                <div class="article-meta-row">
+                  <span>Arjun K.</span>
+                  <span class="dot"></span>
+                  <span>May 22, 2026</span>
+                  <span class="dot"></span>
+                  <span>6 min</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card" id="article-js">
+              <img
+                src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&q=75"
+                alt="JavaScript code with golden bracket on dark background"
+                loading="lazy"
+                width="600" height="340"
+              />
+              <div class="article-card-body">
+                <p class="article-tag">JavaScript</p>
+                <h3>JavaScript DOM Manipulation: Practical Examples for Beginners</h3>
+                <div class="article-meta-row">
+                  <span>Sam Saiket</span>
+                  <span class="dot"></span>
+                  <span>May 18, 2026</span>
+                  <span class="dot"></span>
+                  <span>10 min</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </main>
+      <!-- /main-content -->
+
+    </div>
+    <!-- /page-wrapper -->
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#" class="logo">Saiket<span>.</span>Dev</a>
+          <p>
+            A community-driven platform for web developers and designers to learn,
+            share, and grow together.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="#">HTML &amp; CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">React</a></li>
+            <li><a href="#">Node.js</a></li>
+            <li><a href="#">Databases</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <a href="#">Saiket Systems</a>. All rights reserved.</p>
+        <p>Built with HTML &amp; CSS</p>
+      </div>
+    </footer>
+
+    <!-- ===== MINIMAL JS for interactions ===== -->
+    <script>
+      /* Newsletter subscribe */
+      function handleSubscribe(e) {
+        e.preventDefault();
+        const btn = document.getElementById('subscribe-btn');
+        btn.textContent = '✅ Subscribed!';
+        btn.style.background = 'linear-gradient(135deg,#34d399,#059669)';
+        setTimeout(() => {
+          btn.textContent = 'Subscribe →';
+          btn.style.background = '';
+          document.getElementById('newsletter-email').value = '';
+        }, 2500);
+      }
+
+      /* Hamburger toggle (visual only) */
+      const ham = document.getElementById('hamburger-btn');
+      ham.addEventListener('click', () => {
+        const expanded = ham.getAttribute('aria-expanded') === 'true';
+        ham.setAttribute('aria-expanded', !expanded);
+        ham.querySelectorAll('span').forEach((s, i) => {
+          s.style.transform = !expanded
+            ? i === 0 ? 'translateY(7px) rotate(45deg)'
+            : i === 1 ? 'opacity:0' : 'translateY(-7px) rotate(-45deg)'
+            : '';
+          s.style.opacity  = (!expanded && i === 1) ? '0' : '1';
+        });
+      });
+    </script>
+
+  </body>
+</html>

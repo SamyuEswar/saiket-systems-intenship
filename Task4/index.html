@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Task 4 — A JavaScript quiz application with multiple-choice questions, validation, and score display." />
+    <title>CodeBurst Quiz | Task 4 — Saiket Systems</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <div class="quiz-wrapper">
+
+      <!-- ===== HEADER ===== -->
+      <header class="quiz-header">
+        <div class="quiz-logo">Code<span>Burst</span> Quiz</div>
+      </header>
+
+      <!-- ===== PROGRESS BAR ===== -->
+      <div class="progress-wrap">
+        <span class="progress-label" id="progress-label">Loading...</span>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- ===== QUIZ SCREEN ===== -->
+      <div class="quiz-card" id="quiz-screen">
+
+        <!-- Question -->
+        <p class="question-number" id="question-number">Question 1</p>
+        <h1 class="question-text" id="question-text"></h1>
+
+        <!-- Options List -->
+        <ul class="options-list" id="options-list" role="radiogroup" aria-labelledby="question-text">
+          <!-- Dynamically injected by script.js -->
+        </ul>
+
+        <!-- Validation Error -->
+        <div class="error-msg" id="error-msg" role="alert" aria-live="polite">
+          ⚠️ Please select an answer before proceeding!
+        </div>
+
+        <!-- Action Row -->
+        <div class="action-row">
+          <p class="hint-text" id="hint-text"></p>
+          <button
+            class="btn btn-primary"
+            id="next-btn"
+            aria-label="Go to next question">Next Question <span>→</span>
+          </button>
+        </div>
+
+      </div>
+      <!-- /quiz-screen -->
+
+      <!-- ===== SCORE SCREEN ===== -->
+      <div class="quiz-card score-screen" id="score-screen" aria-live="polite">
+
+        <!-- SVG gradient def -->
+        <svg width="0" height="0" style="position:absolute">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#7c6af7"/>
+              <stop offset="100%" stop-color="#f472b6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Trophy emoji -->
+        <div class="score-trophy" id="score-trophy" aria-hidden="true">🏆</div>
+
+        <!-- Title -->
+        <h2 class="score-title" id="score-title">Quiz Complete!</h2>
+        <p class="score-subtitle" id="score-subtitle">Here's how you did.</p>
+
+        <!-- Score Ring -->
+        <div class="score-ring-wrap" aria-label="Score ring">
+          <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-bg"   cx="60" cy="60" r="54"/>
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <div class="score-ring-label">
+            <span class="score-number" id="score-number">0</span>
+            <span class="score-total"  id="score-total">/ 6</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Badges -->
+        <div class="breakdown" aria-label="Score breakdown">
+          <span class="breakdown-badge badge-correct" id="badge-correct">✅ 0 Correct</span>
+          <span class="breakdown-badge badge-wrong"   id="badge-wrong">❌ 0 Wrong</span>
+          <span class="breakdown-badge badge-pct"     id="badge-pct">📊 0%</span>
+        </div>
+
+        <!-- Restart -->
+        <button
+          class="restart-btn"
+          id="restart-btn"
+          onclick="restartQuiz()"
+          aria-label="Restart the quiz"
+        >
+          🔄 Try Again
+        </button>
+
+      </div>
+      <!-- /score-screen -->
+
+    </div>
+    <!-- /quiz-wrapper -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,360 @@
+/* =========================================
+   TASK 2 — Product Card Styling
+   Saiket Systems | HTML & CSS
+   ========================================= */
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* ===== CSS RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --bg:           #fdfbfb;
+  --surface:      #ffffff;
+  --surface-2:    #f5f7fa;
+  --border:       rgba(0, 0, 0, 0.08);
+  --accent:       #9e86ff;
+  --accent-2:     #ff9eba;
+  --accent-glow:  rgba(158, 134, 255, 0.35);
+  --success:      #53d29a;
+  --text-1:       #2d3748;
+  --text-2:       #4a5568;
+  --text-3:       #a0aec0;
+  --badge-bg:     rgba(158, 134, 255, 0.18);
+  --font-ui:      'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --r-sm:         8px;
+  --r-md:         16px;
+  --r-lg:         24px;
+  --r-xl:         32px;
+}
+
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--bg);
+  color: var(--text-1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== AMBIENT BACKGROUND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 5%, rgba(158, 134, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 40% at 90% 85%, rgba(255, 158, 186, 0.12) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ===== PAGE HEADING ===== */
+.page-heading {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.page-heading h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--text-1) 30%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.page-heading p {
+  font-size: 0.95rem;
+  color: var(--text-3);
+}
+
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 28px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1060px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  cursor: default;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(108, 92, 231, 0.25);
+  border-color: rgba(108, 92, 231, 0.3);
+}
+
+/* ===== CARD BADGES ===== */
+.badge-row {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.badge--new     { background: var(--accent); color: #fff; box-shadow: 0 0 14px var(--accent-glow); }
+.badge--sale    { background: var(--accent-2); color: #fff; }
+.badge--hot     { background: #ff9eba; color: #fff; }
+.badge--limited { background: var(--success); color: #fff; }
+
+/* ===== WISHLIST BUTTON ===== */
+.wishlist-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+  user-select: none;
+}
+
+.wishlist-btn:hover  { background: rgba(255, 158, 186, 0.25); transform: scale(1.12); }
+.wishlist-btn.active { background: rgba(255, 158, 186, 0.35); }
+
+/* ===== CARD IMAGE ===== */
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease), filter 0.5s var(--ease);
+}
+
+.product-card:hover .card-image-wrap img {
+  transform: scale(1.06);
+  filter: brightness(1.1);
+}
+
+/* ===== CARD BODY ===== */
+.card-body {
+  padding: 22px 22px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.84rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ===== STAR RATING ===== */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.stars span {
+  font-size: 0.85rem;
+  color: #f0c040;
+}
+
+.stars span.empty { color: var(--text-3); }
+
+.rating-count {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin-left: 4px;
+}
+
+/* ===== CARD FOOTER ===== */
+.card-footer {
+  padding: 0 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== PRICE ROW ===== */
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.price-current {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.5px;
+}
+
+.price-original {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+.price-save {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+  background: rgba(0, 184, 148, 0.12);
+  padding: 2px 7px;
+  border-radius: 99px;
+}
+
+/* ===== ADD TO CART BUTTON ===== */
+.btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(158, 134, 255, 0.4);
+  transition:
+    transform      0.28s var(--ease),
+    box-shadow     0.28s var(--ease),
+    letter-spacing 0.28s var(--ease);
+}
+
+/* Shine sweep on hover */
+.btn-cart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
+  transition: left 0.5s var(--ease);
+}
+
+.btn-cart:hover::before { left: 160%; }
+
+.btn-cart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(158, 134, 255, 0.55);
+  letter-spacing: 0.6px;
+}
+
+.btn-cart:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 14px rgba(158, 134, 255, 0.35);
+}
+
+/* Added-to-cart success state */
+.btn-cart.added {
+  background: linear-gradient(135deg, var(--success), #00cec9);
+  box-shadow: 0 6px 24px rgba(0, 184, 148, 0.4);
+  pointer-events: none;
+}
+
+.btn-cart .cart-icon { font-size: 1.05rem; transition: transform 0.3s var(--ease); }
+.btn-cart:hover .cart-icon { transform: rotate(-12deg) scale(1.2); }
+
+/* ===== FOOTER NOTE ===== */
+.site-footer {
+  margin-top: 56px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-3);
+}
+
+.site-footer a { color: var(--accent); text-decoration: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}

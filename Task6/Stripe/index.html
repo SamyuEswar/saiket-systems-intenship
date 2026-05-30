@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Landing Page Clone | Task 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ANIMATED BACKGROUND -->
+  <div class="stripe-bg">
+    <div class="bg-stripe stripe-1"></div>
+    <div class="bg-stripe stripe-2"></div>
+    <div class="bg-stripe stripe-3"></div>
+    <div class="bg-stripe stripe-4"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- NAVIGATION -->
+    <header class="navbar">
+      <div class="logo">
+        <h2 class="stripe-logo">stripe</h2>
+      </div>
+      
+      <!-- Sliding Dropdown Background (controlled by JS) -->
+      <div class="dropdown-bg" id="dropdown-bg"></div>
+
+      <nav class="nav-links">
+        <div class="nav-item" data-menu="products">Products</div>
+        <div class="nav-item" data-menu="solutions">Solutions</div>
+        <div class="nav-item" data-menu="developers">Developers</div>
+        <div class="nav-item" data-menu="resources">Resources</div>
+        
+        <!-- Invisible Menus that appear on hover -->
+        <div class="menu-content" id="products-menu">
+          <h4>Payments</h4>
+          <p>Online payments, In-person payments</p>
+        </div>
+        <div class="menu-content" id="solutions-menu">
+          <h4>Use Cases</h4>
+          <p>SaaS, Platforms, Marketplaces</p>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="nav-btn text-btn">Sign in</a>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="hero">
+      <div class="hero-text">
+        <h1 class="hero-title">Financial infrastructure for the internet</h1>
+        <p class="hero-subtitle">
+          Millions of companies of all sizes—from startups to Fortune 500s—use Stripe's software and APIs to accept payments, send payouts, and manage their businesses online.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Start now</button>
+          <button class="btn btn-text">Contact sales &rarr;</button>
+        </div>
+      </div>
+      
+      <div class="hero-graphics">
+        <!-- Abstract representation of Stripe's angled dashboard mockups -->
+        <div class="mockup mockup-back">
+          <div class="mockup-header">Revenue</div>
+          <div class="mockup-chart"></div>
+        </div>
+        <div class="mockup mockup-front">
+          <div class="mockup-header">Payment Successful</div>
+          <div class="mockup-row"></div>
+          <div class="mockup-row short"></div>
+          <button class="mockup-btn">Pay $24.99</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- LOGOS SECTION -->
+    <section class="trusted-by">
+      <div class="logo-grid">
+        <div class="client-logo">Amazon</div>
+        <div class="client-logo">Salesforce</div>
+        <div class="client-logo">Google</div>
+        <div class="client-logo">Shopify</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
