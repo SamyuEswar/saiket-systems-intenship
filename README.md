@@ -1,67 +1,88 @@
-# Saiket Systems – Portfolio Project
+# 🌐 Saiket Systems — Front‑End Internship Tasks
 
-This repository contains a collection of six independent tasks that demonstrate core web‑development skills using **HTML**, **CSS**, and **JavaScript**.  Each task lives in its own folder (`Task1` … `Task6`) and can be opened directly in a browser.
+**Organization:** Saiket Systems  
+**Project:** Interactive Front‑End Portfolio  
+**Objective:** Build a responsive and interactive website showcasing six front‑end development tasks ranging from basic HTML to advanced web‑page clones.
 
 ---
 
-## 📚 Task Overview
+## 📁 Project Structure
 
-| Task | Folder | Goal | Key Features Implemented |
-|------|--------|------|---------------------------|
-| **Task 1** – Basic Blog Post Layout | `Task1` | Create a single‑page blog post with semantic markup. | • Semantic HTML5 tags (`article`, `header`, `section`).<br>• Title, author, publication date.<br>• Intro, main content with list, conclusion.<br>• Featured image and a “Read More” CTA.<br>• Clean, accessible markup. |
-| **Task 2** – Product Card Styling | `Task2` | Build a stylish product card with hover effects. | • Responsive grid layout for cards.<br>• Image, product name, price, badge, wishlist button.<br>• Hover animations on card and button.<br>• Additional three product cards added (total 6).<br>• Fully responsive on mobile. |
-| **Task 3** – Responsive Webpage Layout | `Task3` | Design a four‑section layout (header, sidebar, main, footer) that adapts to any screen size. | • CSS Grid layout with `grid-template‑areas` for desktop.
-• Sidebar on the right, main content on the left.
-• Media queries for tablet (sidebar below) and mobile (stacked).
-• Updated pastel color theme and glass‑morphism accents.
-• Fixed variable naming (`--ink‑2`) and restored grid‑area mapping.
-• All content now displays correctly in the main area. |
-| **Task 4** – Quiz Application | `Task4` | Create a simple JavaScript quiz with validation and scoring. | • 10‑question quiz (random 6 per session).<br>• Immediate feedback, score summary at the end.<br>• `escapeHTML` utility for safe rendering.<br>• Responsive design. |
-| **Task 5** – To‑Do List App | `Task5` | Build a CRUD to‑do list with persistence. | • Add, edit, delete, and toggle completion.<br>• `localStorage` persistence across reloads.
-• Search & filter functionality.
-• Dark‑mode‑compatible pastel theme.
-• Accessible keyboard navigation. |
-| **Task 6** – Real‑World Webpage Clone | `Task6` – Sub‑folders: `Duolingo`, `Stripe`, `Pixabay` | Re‑create three popular landing pages with interactive elements. | • **Duolingo** – Learning‑path UI with modal dialogs.
-• **Stripe** – Hero section with animated gradient background and dropdown menu.
-• **Pixabay** – Masonry image grid with hover overlay and search bar.
-• All cloned pages are static but mimic real‑world interactivity using vanilla JS. |
+```
+saiket-systems/
+├── Task1/      — Basic Blog Post Layout             [Level 1: Beginner]
+├── Task2/      — Product Card Styling               [Level 1: Beginner]
+├── Task3/      — Responsive Webpage Layout          [Level 2: Intermediate]
+├── Task4/      — Quiz Application                   [Level 2: Intermediate]
+├── Task5/      — To‑Do List App                     [Level 3: Advanced]
+├── Task6/      — Webpage Clones (Duolingo, Stripe, Pixabay) [Level 3: Advanced]
+└── index.html  — Landing page linking all tasks
+```
+
+---
+
+## 🟢 Level 1: Beginner
+
+### 📄 Task 1 — Basic Blog Post Layout
+*Creates a semantic HTML blog page with title, author, date, sections, list, image, and “Read More” link.*
+
+### 📄 Task 2 — Product Card Styling
+*Designs a responsive product card with image, name, price, badge, and hover‑animated “Add to Cart” button.*
+
+---
+
+## 🔵 Level 2: Intermediate
+
+### 📄 Task 3 — Responsive Webpage Layout
+*Four‑section layout (header, sidebar, main, footer) built with CSS Grid and media queries.*
+
+### 📄 Task 4 — Quiz Application
+*Simple JavaScript quiz with multiple‑choice questions, validation, and scoring.*
+
+---
+
+## 🟠 Level 3: Advanced
+
+### 📄 Task 5 — To‑Do List App
+*CRUD to‑do list with `localStorage` persistence, search/filter, and dark‑mode‑compatible styling.*
+
+### 📄 Task 6 — Webpage Clones
+*Recreates three popular landing pages:*
+- **Duolingo** – language‑learning UI with modals.
+- **Stripe** – hero section with animated gradient background.
+- **Pixabay** – Masonry image grid with hover overlay and search.
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/your‑user/saiket-systems.git
+   git clone https://github.com/YOUR_USERNAME/saiket-systems.git
    cd saiket-systems
    ```
 2. **Open any task** by opening its `index.html` in a browser, e.g.:
    ```bash
    start Task3\index.html   # Windows
-   open Task3/index.html     # macOS/Linux
    ```
-3. **Deploy** – The entire repo is ready for GitHub Pages. The live site will be available at:
-   `https://your‑user.github.io/saiket-systems/`.
-   Each task can be accessed via the sub‑folder path (e.g., `.../Task5/`).
+3. **Deploy** – The repository is ready for GitHub Pages. The live site will be available at:
+   `https://YOUR_USERNAME.github.io/saiket-systems/`. Each task is accessible via its sub‑folder path.
 
 ---
 
 ## 🎨 Design Philosophy
 
 - **Semantic HTML** – Improves accessibility and SEO.
-- **Responsive CSS** – Mobile‑first breakpoints, fluid grids, and CSS variables for consistent theming.
-- **Vanilla JavaScript** – No frameworks; keeps the projects lightweight and easy to understand.
-- **Modern aesthetics** – Pastel palettes, subtle gradients, glass‑morphism, and micro‑animations for a premium feel.
+- **Responsive CSS** – Mobile‑first breakpoints, fluid grids, CSS custom properties.
+- **Vanilla JavaScript** – No frameworks, keeping projects lightweight.
+- **Modern aesthetics** – Dark palettes, subtle gradients, glass‑morphism, micro‑animations for a premium feel.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Language | Version/Features |
-|----------|-------------------|
+| Language | Features |
+|----------|----------|
 | **HTML5** | Semantic tags, ARIA attributes, responsive meta viewport. |
-| **CSS3** | Custom properties (`--variables`), grid, flexbox, media queries, transitions, gradients, `backdrop-filter`. |
+| **CSS3** | Custom properties, Grid, Flexbox, media queries, transitions, gradients, `backdrop-filter`. |
 | **JavaScript (ES6+)** | Modules, arrow functions, `localStorage`, DOM manipulation, event delegation. |
-
----
-
